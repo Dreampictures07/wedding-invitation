@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Royal Wedding Invitation</title>
+
+    <meta name="description" content="Join us in celebrating our wedding.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --champagne: #F7E7CE;
+            --ivory: #FFFFF0;
+            --rose: #FADADD;
+            --dark: #0b0b12;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: #0b0b12;
+            overflow-x: hidden;
+            color: white;
+        }
+
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .signature {
+            font-family: 'Great Vibes', cursive;
+        }
+
+        .hero-gradient {
+            background:
+                radial-gradient(circle at top, #40210f 0%, #0b0b12 50%);
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, .08);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, .15);
+        }
+
+        .gold-text {
+            color: var(--gold);
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #D4AF37, #F5D76E);
+            color: black;
+        }
+
+        .flower {
+            position: absolute;
+            animation: float 8s infinite ease-in-out;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-30px);
+            }
+        }
+
+        .petal {
+            position: fixed;
+            top: -10px;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-50px) rotate(0deg);
+            }
+
+            100% {
+                transform: translateY(110vh) rotate(360deg);
+            }
+        }
+
+        .countdown-box {
+            background: rgba(255, 255, 255, .05);
+            border: 1px solid rgba(255, 255, 255, .1);
+            backdrop-filter: blur(20px);
+        }
+
+        .glow {
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, #d4af3740, transparent);
+            pointer-events: none;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="glow"></div>
+
+    <!-- HERO -->
+
+    <section class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden">
+
+        <div class="absolute inset-0">
+
+            <div class="flower top-10 left-10 text-5xl opacity-20">
+                🌸
+            </div>
+
+            <div class="flower bottom-20 right-20 text-6xl opacity-20">
+                🌹
+            </div>
+
+        </div>
+
+        <div class="text-center px-6 z-10 max-w-4xl">
+
+            <p class="uppercase tracking-[8px] text-gray-300 mb-6">
+                Wedding Invitation
+            </p>
+
+            <h1 class="signature text-6xl md:text-8xl gold-text">
+                Varadaraj
+            </h1>
+
+            <div class="text-2xl my-3 text-gold">
+                &
+            </div>
+
+            <h1 class="signature text-6xl md:text-8xl gold-text">
+                Senthamizh
+            </h1>
+
+            <p class="mt-6 text-lg tracking-widest uppercase">
+                17 June 2026
+            </p>
+
+            <p class="mt-8 text-lg md:text-2xl text-gray-300">
+                Together with our families,
+                we invite you to celebrate our wedding.
+            </p>
+
+            <div class="grid grid-cols-4 gap-3 mt-10">
+
+                <div class="countdown-box p-4 rounded-xl">
+                    <div id="days" class="text-3xl font-bold">00</div>
+                    <span>Days</span>
+                </div>
+
+                <div class="countdown-box p-4 rounded-xl">
+                    <div id="hours" class="text-3xl font-bold">00</div>
+                    <span>Hours</span>
+                </div>
+
+                <div class="countdown-box p-4 rounded-xl">
+                    <div id="minutes" class="text-3xl font-bold">00</div>
+                    <span>Minutes</span>
+                </div>
+
+                <div class="countdown-box p-4 rounded-xl">
+                    <div id="seconds" class="text-3xl font-bold">00</div>
+                    <span>Seconds</span>
+                </div>
+
+            </div>
+
+            <button class="btn-gold px-10 py-4 rounded-full mt-10 font-semibold hover:scale-105 transition">
+                Open Invitation
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- WELCOME -->
+
+    <section class="py-24 px-6">
+
+        <div class="max-w-5xl mx-auto text-center">
+
+            <h2 class="signature text-6xl gold-text">
+                Welcome
+            </h2>
+
+            <p class="mt-8 text-xl leading-relaxed text-gray-300">
+                We are delighted to invite you to share in the joy,
+                love, and celebration of our union.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section class="py-24">
+
+        <div class="max-w-6xl mx-auto px-6">
+
+            <h2 class="text-center playfair text-5xl gold-text mb-16">
+                The Couple
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-10">
+
+                <div class="glass p-8 rounded-3xl text-center">
+
+                    <img src="images/groom.jpg"
+                        class="w-48 h-48 mx-auto rounded-full object-cover border-4 border-yellow-500">
+
+                    <h3 class="mt-6 text-4xl signature gold-text">
+                        Varadaraj
+                    </h3>
+
+                    <p class="mt-4 text-gray-300">
+                        The Groom
+                    </p>
+
+                </div>
+
+                <div class="glass p-8 rounded-3xl text-center">
+
+                    <img src="images/bride.jpg"
+                        class="w-48 h-48 mx-auto rounded-full object-cover border-4 border-yellow-500">
+
+                    <h3 class="mt-6 text-4xl signature gold-text">
+                        Senthamizh
+                    </h3>
+
+                    <p class="mt-4 text-gray-300">
+                        The Bride
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- STORY -->
+
+    <section class="py-24">
+
+        <div class="max-w-5xl mx-auto px-6">
+
+            <h2 class="text-center playfair text-5xl gold-text mb-20">
+                Our Story
+            </h2>
+
+            <div class="relative">
+
+                <!-- Center Line -->
+                <div class="absolute left-1/2 top-0 bottom-0 w-1 bg-yellow-500 -translate-x-1/2"></div>
+
+                <!-- Item 1 -->
+                <div class="relative flex items-center mb-16">
+
+                    <div class="w-[45%] text-right pr-6">
+                        <h3 class="text-2xl gold-text">First Meeting</h3>
+                        <p>A beautiful beginning.</p>
+                    </div>
+
+                    <!-- Perfect Center Circle -->
+                    <div
+                        class="absolute left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-yellow-500 border-4 border-[#0b0b12] z-20">
+                    </div>
+
+                    <div class="w-[55%]"></div>
+
+                </div>
+
+                <!-- Item 2 -->
+                <div class="relative flex items-center mb-16">
+
+                    <div class="w-[55%]"></div>
+
+                    <div
+                        class="absolute left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-yellow-500 border-4 border-[#0b0b12] z-20">
+                    </div>
+
+                    <div class="w-[45%] pl-6">
+                        <h3 class="text-2xl gold-text">Friendship</h3>
+                        <p>A bond grew stronger.</p>
+                    </div>
+
+                </div>
+
+                <div class="relative flex items-center mb-16">
+
+                    <div class="w-[45%] text-right pr-6">
+                        <h3 class="text-2xl gold-text">First Meeting</h3>
+                        <p>A beautiful beginning.</p>
+                    </div>
+
+                    <!-- Perfect Center Circle -->
+                    <div
+                        class="absolute left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-yellow-500 border-4 border-[#0b0b12] z-20">
+                    </div>
+
+                    <div class="w-[55%]"></div>
+
+                </div>
+
+                <div class="relative flex items-center mb-16">
+
+                    <div class="w-[55%]"></div>
+
+                    <div
+                        class="absolute left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-yellow-500 border-4 border-[#0b0b12] z-20">
+                    </div>
+
+                    <div class="w-[45%] pl-6">
+                        <h3 class="text-2xl gold-text">Friendship</h3>
+                        <p>A bond grew stronger.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- EVENTS -->
+
+    <section class="py-24">
+
+        <div class="max-w-5xl mx-auto px-6">
+
+            <h2 class="text-center playfair text-5xl gold-text mb-16">
+                Wedding Events
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-10">
+
+                <div class="glass p-10 rounded-3xl text-center">
+
+                    <div class="text-6xl mb-4">
+                        💍
+                    </div>
+
+                    <h3 class="text-4xl gold-text">
+                        Wedding Ceremony
+                    </h3>
+
+                    <p class="mt-4">
+                        17 June 2026
+                    </p>
+
+                    <p class="text-xl mt-2">
+                        4:30 AM – 6:00 AM
+                    </p>
+
+                </div>
+
+                <div class="glass p-10 rounded-3xl text-center">
+
+                    <div class="text-6xl mb-4">
+                        🎉
+                    </div>
+
+                    <h3 class="text-4xl gold-text">
+                        Reception
+                    </h3>
+
+                    <p class="mt-4">
+                        17 June 2026
+                    </p>
+
+                    <p class="text-xl mt-2">
+                        9:00 AM – 10:30 AM
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- GALLERY -->
+
+    <section class="py-24">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <h2 class="text-center playfair text-5xl gold-text mb-16">
+                Gallery
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <img src="gallery/1.jpg" class="rounded-3xl hover:scale-105 transition duration-500">
+
+                <img src="gallery/2.jpg" class="rounded-3xl hover:scale-105 transition duration-500">
+
+                <img src="gallery/3.jpg" class="rounded-3xl hover:scale-105 transition duration-500">
+
+                <img src="gallery/4.jpg" class="rounded-3xl hover:scale-105 transition duration-500">
+
+                <img src="gallery/5.jpg" class="rounded-3xl hover:scale-105 transition duration-500">
+
+                <img src="gallery/6.jpg" class="rounded-3xl hover:scale-105 transition duration-500">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer class="py-20 text-center">
+
+        <h2 class="signature text-6xl gold-text">
+            V & S
+        </h2>
+
+        <p class="mt-6 text-gray-400">
+            Thank you for being part of our journey.
+        </p>
+
+    </footer>
+
+    <script>
+
+        const targetDate =
+            new Date("June 17, 2026 04:30:00").getTime();
+
+        setInterval(() => {
+
+            const now = new Date().getTime();
+
+            const distance = targetDate - now;
+
+            document.getElementById('days').innerHTML =
+                Math.floor(distance / (1000 * 60 * 60 * 24));
+
+            document.getElementById('hours').innerHTML =
+                Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+            document.getElementById('minutes').innerHTML =
+                Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            document.getElementById('seconds').innerHTML =
+                Math.floor((distance % (1000 * 60)) / 1000);
+
+        }, 1000);
+
+        gsap.from("h1", {
+            y: 100,
+            opacity: 0,
+            duration: 2
+        });
+
+        gsap.from(".countdown-box", {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            stagger: .2
+        });
+
+        document.addEventListener('mousemove', (e) => {
+
+            document.querySelector('.glow').style.left =
+                e.clientX + 'px';
+
+            document.querySelector('.glow').style.top =
+                e.clientY + 'px';
+
+        });
+
+        function createPetal() {
+
+            const petal = document.createElement('div');
+
+            petal.className = 'petal';
+
+            petal.innerHTML = '🌸';
+
+            petal.style.left = Math.random() * 100 + 'vw';
+
+            petal.style.animationDuration =
+                5 + Math.random() * 10 + 's';
+
+            petal.style.fontSize =
+                20 + Math.random() * 20 + 'px';
+
+            document.body.appendChild(petal);
+
+            setTimeout(() => {
+                petal.remove();
+            }, 15000);
+
+        }
+
+        setInterval(createPetal, 400);
+
+    </script>
+
+</body>
+
+</html>
