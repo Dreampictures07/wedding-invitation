@@ -121,7 +121,7 @@
 
     <!-- HERO -->
 
-    <section class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden" id="hero">
 
         <div class="absolute inset-0">
 
@@ -187,7 +187,8 @@
             </div>
 
             <a href="assets/pdf/wedding-invitation.pdf" download="Varadaraj-Senthamizh-Wedding-Invitation.pdf"
-                class="btn-gold px-10 py-4 rounded-full mt-10 font-semibold hover:scale-105 transition inline-block">
+                class="btn-gold px-10 py-4 rounded-full mt-10 font-semibold hover:scale-105 transition inline-block"
+                id="openInvitation">
                 Open Invitation
             </a>
 
@@ -196,14 +197,8 @@
     </section>
 
     <!-- WELCOME -->
-    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-center z-20">
 
-        <div class="mt-2 animate-bounce text-yellow-400 text-3xl">
-            ↓
-        </div>
-    </div>
-
-    <section class="py-24 px-6">
+    <section class="py-24 px-6" id="welcome">
 
         <div class="max-w-5xl mx-auto text-center">
 
@@ -534,6 +529,17 @@
 
         setInterval(createPetal, 400);
 
+        window.addEventListener('load', () => {
+
+            setTimeout(() => {
+
+                document.getElementById('welcome').scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+            }, 4000);
+
+        });
     </script>
 
 </body>
